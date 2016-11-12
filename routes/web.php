@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $hour = date("H");
+    $day_mode = $hour > 5 && $hour < 18;
+    $lesson_types = ['horse riding', 'piano', 'yoga'];
+    return view('welcome', compact('day_mode', 'lesson_types'));
 });
 
 Route::get('about', function () {

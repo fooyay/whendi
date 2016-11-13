@@ -15,10 +15,6 @@ More about fooyay: <a href="https://about.me/fooyay">about.me/fooyay</a>.
 
 If you want to make contriutions or have suggestions for improvement, make a pull request or send a message.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
 ## License
 
 The code is open source - here it is, you can see it.

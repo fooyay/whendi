@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'PagesController@home');
+Route::get('about', 'PagesController@about');
+Route::get('features', 'PagesController@features');
 
-Route::get('about', function () {
-    return view('pages.about');
-});

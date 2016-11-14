@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>about the author: fooyay</title>
+        <title>When Can You Do It</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,14 +79,20 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    about the author: fooyay
+                    When Can You Do It
                 </div>
 
-                <div class="links">
-                    <a href="https://twitter.com/fooyay">Twitter</a>
-                    <a href="https://fooyay.tumblr.com">Blog</a>
-                    <a href="https://github.com/fooyay">GitHub</a>
-                </div>
+                <p>Course reservation system for all kinds of lessons, such as:</p>
+                @foreach($lesson_types as $lesson_type)
+                    <li>{{ $lesson_type }}</li>
+                @endforeach
+
+                {{-- A different greetingi based on time of day. --}}
+                @if( $day_mode )
+                    <p>Good Day!</p>
+                @else
+                    <p>Good Evening!</p>
+                @endif
             </div>
         </div>
 

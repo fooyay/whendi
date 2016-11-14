@@ -11,6 +11,16 @@ class PagesController extends Controller
         $hour = date("H");
         $day_mode = $hour > 5 && $hour < 18;
         $lesson_types = ['horse riding', 'piano', 'yoga'];
-        return view('welcome', compact('day_mode', 'lesson_types'));
+        return view('pages.welcome', compact('day_mode', 'lesson_types'));
+    }
+
+    public function about()
+    {
+        return view('pages.about');
+    }
+
+    public function features()
+    {
+        return view('pages.features');
     }
 }

@@ -11,12 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    $hour = date("H");
-    $day_mode = $hour > 5 && $hour < 18;
-    $lesson_types = ['horse riding', 'piano', 'yoga'];
-    return view('welcome', compact('day_mode', 'lesson_types'));
-});
+Route::get('/', 'PagesController@home');
 
 Route::get('about', function () {
     return view('pages.about');

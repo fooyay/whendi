@@ -4,6 +4,8 @@ An application to allow people to make reservations for lessons and other servic
 PHP 7 and the Laravel Framework. The purpose of the project is mostly educational; what better way
 to practice Laravel than to build a real application?
 
+[![Code Climate](https://codeclimate.com/github/fooyay/whendi/badges/gpa.svg)](https://codeclimate.com/github/fooyay/whendi) [![Test Coverage](https://codeclimate.com/github/fooyay/whendi/badges/coverage.svg)](https://codeclimate.com/github/fooyay/whendi/coverage)
+
 ## About the Author
 
 Follow <a href="https://twitter.com/fooyay">@fooyay</a> on Twitter and on his

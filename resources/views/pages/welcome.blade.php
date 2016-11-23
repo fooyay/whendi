@@ -5,12 +5,12 @@
                 </div>
 
                 <p>Course reservation system for all kinds of lessons, such as:</p>
-                @foreach($lesson_types as $lesson_type)
-                    <li>{{ $lesson_type }}</li>
+                @foreach($lessonTypes as $lessonType)
+                    <li>{{ $lessonType }}</li>
                 @endforeach
 
                 {{-- A different greetingi based on time of day. --}}
-                @if( $day_mode )
+                @if( $dayMode )
                     <p>Good Day!</p>
                 @else
                     <p>Good Evening!</p>

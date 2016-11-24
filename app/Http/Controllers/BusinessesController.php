@@ -13,4 +13,9 @@ class BusinessesController extends Controller
 
         return view('businesses.index', compact('businesses'));
     }
+
+    public function show(Business $business)
+    {
+        return view('businesses.show', compact('business'));
+    }
 }

@@ -15,3 +15,6 @@ Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('features', 'PagesController@features');
 
+Route::get('businesses', 'BusinessesController@index');
+Route::get('businesses/{business}', 'BusinessesController@show');
+

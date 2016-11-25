@@ -10,4 +10,9 @@ class Business extends Model
     {
         return $this->hasMany(Lesson::class);
     }
+
+    public function slug()
+    {
+        return str_slug($this->name);
+    }
 }

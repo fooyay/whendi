@@ -4,6 +4,6 @@
     <h1>List of Businesses</h1>
 
     @foreach ($businesses as $business)
-        <div>{{ $business->name }}</div>
+        <div><a href="/businesses/{{ $business->id }}">{{ $business->name }}</a></div>
     @endforeach
 @stop

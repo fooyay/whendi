@@ -14,8 +14,9 @@ class BusinessesController extends Controller
         return view('businesses.index', compact('businesses'));
     }
 
-    public function show(Business $business)
+    public function show($slug)
     {
+        $business = Business::where('slug', $slug)->firstOrFail();
         return view('businesses.show', compact('business'));
     }
 }

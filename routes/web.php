@@ -18,3 +18,4 @@ Route::get('features', 'PagesController@features');
 Route::get('businesses', 'BusinessesController@index');
 Route::get('businesses/{slug}', 'BusinessesController@show');
 
+Route::post('lessons', 'LessonsController@store');

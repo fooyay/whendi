@@ -13,4 +13,16 @@
             <li>{{$lesson->name}} (capacity: {{$lesson->capacity}})</li>
         @endforeach
     </ul>
+
+    <h2>Add a Lesson</h2>
+
+    <form method="POST" action="/lessons">
+        <b>Name: </b>
+        <input type="text" name="name"><br />
+        <b>Capacity: </b>
+        <input type="number" name="capacity" min="1" size="5"><br />
+        {{ csrf_field() }}
+        <input type="hidden" name="businessId" value="{{ $business->id }}">
+        <button type="submit">Add Lesson</button>
+    </form>
 @stop

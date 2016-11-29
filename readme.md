@@ -17,6 +17,10 @@ More about fooyay: <a href="https://about.me/fooyay">about.me/fooyay</a>.
 
 If you want to make contriutions or have suggestions for improvement, make a pull request or send a message.
 
+## Issues
+
+To report bugs or request new features, open an issue on the <a href="https://github.com/fooyay/whendi/issues">Issues Page</a> in GitHub.
+
 ## License
 
 The code is open source - here it is, you can see it.

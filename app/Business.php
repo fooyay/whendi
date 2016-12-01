@@ -15,4 +15,9 @@ class Business extends Model
     {
         return str_slug($this->name);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -10,7 +10,7 @@
     <p>This business offers the following lessons:</p>
     <ul>
         @foreach($business->lessons as $lesson)
-            <li>{{$lesson->name}} (capacity: {{$lesson->capacity}})</li>
+            <li>{{$lesson->name}} (capacity: {{$lesson->capacity}}) <a href="/lessons/{{ $lesson->id }}/edit"><span class="mirror">&#x270E;</span></a></li>
         @endforeach
     </ul>
 

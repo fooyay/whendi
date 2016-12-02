@@ -10,8 +10,8 @@
         <b>Capacity: </b>
         <input type="number" name="capacity" min="1" size="5" value="{{ $lesson->capacity }}"><br />
         {{ csrf_field() }}
-        <input type="hidden" name="businessId" value="{{ 1 /* $business->id */ }}">
         <button type="submit">Update Lesson</button>
     </form>
 
+    <h2><a href="/businesses/{{ $lesson->business->slug }}">Back to {{ $lesson->business->name }}</a></h2>
 @stop

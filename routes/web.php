@@ -19,4 +19,5 @@ Route::get('businesses', 'BusinessesController@index');
 Route::get('businesses/{business}', 'BusinessesController@show');
 
 Route::post('lessons', 'LessonsController@store');
-Route::get('lessons', 'LessonsController@edit');
+Route::get('lessons/{lesson}/edit', 'LessonsController@edit');
+Route::patch('lessons/{lesson}', 'LessonsController@update');

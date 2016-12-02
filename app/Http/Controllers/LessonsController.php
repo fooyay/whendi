@@ -16,8 +16,22 @@ class LessonsController extends Controller
         $lesson->name = $request->name;
         $lesson->capacity = $request->capacity;
 
-        $business = Business::find($request->businessId);
+        $business = Business::findOrFail($request->businessId);
         $business->lessons()->save($lesson);
+
+        return back();
+    }
+
+    public function edit(Lesson $lesson)
+    {
+        return view('lessons.edit', compact('lesson'));
+    }
+
+    public function update(Request $request, Lesson $lesson)
+    {
+        $lesson->name = $request->name;
+        $lesson->capacity = $request->capacity;
+        $lesson->update();
 
         return back();
     }

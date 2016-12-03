@@ -13,5 +13,23 @@
         <button type="submit">Update Lesson</button>
     </form>
 
+    <p>
+    <form method="POST" action="/lessons/{{ $lesson->id }}"/>
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+        <script>
+            function ConfirmDelete()
+            {
+                var x = confirm("Are you sure you want to delete this lesson?");
+                if (x)
+                    return true;
+                else
+                    return false;
+            }
+        </script>
+        <button type="submit" onclick="return ConfirmDelete();">Delete this Lesson</button>
+    </form>
+    </p>
+
     <h2><a href="/businesses/{{ $lesson->business->slug }}">Back to {{ $lesson->business->name }}</a></h2>
 @stop

@@ -35,4 +35,13 @@ class LessonsController extends Controller
 
         return back();
     }
+
+    public function destroy(Lesson $lesson)
+    {
+        $slug = $lesson->business->slug;
+        $lesson->delete();
+
+        return redirect("/businesses/$slug");
+    }
+
 }

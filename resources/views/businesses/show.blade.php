@@ -16,11 +16,21 @@
 
     <h2>Add a Lesson</h2>
 
+    @if (count($errors) > 0)
+        <span style="color:red">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </span>
+    @endif
+
     <form method="POST" action="/lessons">
         <b>Name: </b>
-        <input type="text" name="name"><br />
+        <input type="text" name="name" required><br />
         <b>Capacity: </b>
-        <input type="number" name="capacity" min="1" size="5"><br />
+        <input type="number" name="capacity" min="1" size="5" required><br />
         {{ csrf_field() }}
         <input type="hidden" name="businessId" value="{{ $business->id }}">
         <button type="submit">Add Lesson</button>

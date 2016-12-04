@@ -3,12 +3,22 @@
 @section('content')
     <h1>Edit Lesson</h1>
 
+    @if (count($errors) > 0)
+        <span style="color:red">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </span>
+    @endif
+
     <form method="POST" action="/lessons/{{ $lesson->id }}">
         {{ method_field('PATCH') }}
         <b>Name: </b>
-        <input type="text" name="name" value="{{ $lesson->name }}"><br />
+        <input type="text" name="name" value="{{ $lesson->name }}" required><br />
         <b>Capacity: </b>
-        <input type="number" name="capacity" min="1" size="5" value="{{ $lesson->capacity }}"><br />
+        <input type="number" name="capacity" min="1" size="5" value="{{ $lesson->capacity }}" required><br />
         {{ csrf_field() }}
         <button type="submit">Update Lesson</button>
     </form>

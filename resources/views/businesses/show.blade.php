@@ -28,9 +28,9 @@
 
     <form method="POST" action="/lessons">
         <b>Name: </b>
-        <input type="text" name="name" required><br />
+        <input type="text" name="name" value="{{ old('name') }}" required><br />
         <b>Capacity: </b>
-        <input type="number" name="capacity" min="1" size="5" required><br />
+        <input type="number" name="capacity" min="1" size="5" value="{{ old('capacity') }}" required><br />
         {{ csrf_field() }}
         <input type="hidden" name="businessId" value="{{ $business->id }}">
         <button type="submit">Add Lesson</button>

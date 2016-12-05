@@ -18,3 +18,7 @@ Route::get('features', 'PagesController@features');
 Route::get('businesses', 'BusinessesController@index');
 Route::get('businesses/{business}', 'BusinessesController@show');
 
+Route::post('lessons', 'LessonsController@store');
+Route::get('lessons/{lesson}/edit', 'LessonsController@edit');
+Route::patch('lessons/{lesson}', 'LessonsController@update');
+Route::delete('lessons/{lesson}', 'LessonsController@destroy');

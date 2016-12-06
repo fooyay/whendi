@@ -22,3 +22,7 @@ Route::post('lessons', 'LessonsController@store');
 Route::get('lessons/{lesson}/edit', 'LessonsController@edit');
 Route::patch('lessons/{lesson}', 'LessonsController@update');
 Route::delete('lessons/{lesson}', 'LessonsController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

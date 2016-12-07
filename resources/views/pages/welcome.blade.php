@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
                 <div class="title m-b-md">
-                    When Can You Do It
+                    When Can You Do It?
                 </div>
 
                 <p>Course reservation system for all kinds of lessons, such as:</p>

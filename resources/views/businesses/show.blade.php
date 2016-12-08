@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+    @if(Session::has('lesson-status'))
+        <div class='alert'>{!!  session('lesson-status') !!}</div>
+    @endif
+
     <h1>Business Detail</h1>
 
     <p><b>Name: </b>{{$business->name}}</p>

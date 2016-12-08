@@ -29,6 +29,8 @@ class LessonsController extends Controller
         $business = Business::findOrFail($request->businessId);
         $business->lessons()->save($lesson);
 
+        $request->session()->flash('lesson-status', 'Lesson added.');
+
         return back();
     }
 
@@ -54,15 +56,17 @@ class LessonsController extends Controller
         $lesson->capacity = $request->capacity;
         $lesson->update();
 
-        return back();
+        $request->session()->flash('lesson-status', 'Lesson updated.');
+
+        return redirect("/businesses/" . $lesson->business->slug);
     }
 
-    public function destroy(Lesson $lesson)
+    public function destroy(Request $request, Lesson $lesson)
     {
-        $slug = $lesson->business->slug;
         $lesson->delete();
+        $request->session()->flash('lesson-status', 'Lesson deleted.');
 
-        return redirect("/businesses/$slug");
+        return redirect("/businesses/" . $lesson->business->slug);
     }
 
 }

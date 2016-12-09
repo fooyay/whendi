@@ -28,9 +28,7 @@ class LessonsController extends Controller
 
         $business = Business::findOrFail($request->businessId);
         $business->lessons()->save($lesson);
-
-        $request->session()->flash('flash-message', 'Lesson added.');
-        $request->session()->flash('flash-style', 'flash-good');
+        flash('Lesson added.');
 
         return back();
     }
@@ -56,9 +54,7 @@ class LessonsController extends Controller
         $lesson->name = $request->name;
         $lesson->capacity = $request->capacity;
         $lesson->update();
-
-        $request->session()->flash('flash-message', 'Lesson updated.');
-        $request->session()->flash('flash-style', 'flash-good');
+        flash('Lesson updated.');
 
         return redirect("/businesses/" . $lesson->business->slug);
     }
@@ -66,9 +62,7 @@ class LessonsController extends Controller
     public function destroy(Request $request, Lesson $lesson)
     {
         $lesson->delete();
-        $request->session()->flash('flash-message', 'Lesson deleted.');
-        $request->session()->flash('flash-style', 'flash-alert');
-
+        flash('Lesson deleted.', 'flash-alert');
 
         return redirect("/businesses/" . $lesson->business->slug);
     }

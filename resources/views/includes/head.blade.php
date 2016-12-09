@@ -70,4 +70,17 @@
                 -ms-transform: scale(-1, 1);
                 transform: scale(-1, 1);
             }
+
+            .flash-good {
+                background: green;
+                color: white;
+                padding: 5px;
+            }
+
+            .flash-alert {
+                background: red;
+                color: white;
+                padding: 5px;
+            }
+
         </style>

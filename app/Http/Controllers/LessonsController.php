@@ -46,7 +46,7 @@ class LessonsController extends Controller
                 'required',
                 Rule::unique('lessons')->where(function ($query) use ($businessId) {
                     $query->where('business_id', $businessId);
-                }),
+                })->ignore($lesson->id),
             ],
             'capacity' => 'required|numeric|min:1',
         ]);

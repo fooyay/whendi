@@ -30,4 +30,18 @@ class User extends Authenticatable
     public function isAdmin() {
         return $this->is_admin;
     }
+
+    public function businesses() {
+        return $this->hasMany('App\Business', 'owner_id');
+    }
+
+    public function employees()
+    {
+        return $this->hasMany('App\Employee');
+    }
+
+    public function clients()
+    {
+        return $this->hasMany('App\Client');
+    }
 }

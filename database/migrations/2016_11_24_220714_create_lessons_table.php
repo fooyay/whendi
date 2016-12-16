@@ -15,10 +15,11 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('business_id')->unsighed()->index;
+            $table->unsignedInteger('business_id');
             $table->string('name');
-            $table->integer('capacity')->unsigned();
+            $table->unsignedInteger('capacity');
             $table->timestamps();
+            $table->index('business_id');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLessonsTable extends Migration
+class CreateEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateLessonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lessons', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('business_id');
-            $table->string('name');
-            $table->unsignedInteger('capacity');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
-            $table->index('business_id');
+            $table->index('user_id');
+            $table->unique(['business_id', 'user_id']); // can't be employee of same business twice
         });
     }
 
@@ -30,6 +30,6 @@ class CreateLessonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lessons');
+        Schema::dropIfExists('employees');
     }
 }

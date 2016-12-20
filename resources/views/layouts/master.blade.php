@@ -8,6 +8,9 @@
             @include('includes.header')
 
             <div class="content">
+                @if(session()->has('flash-message'))
+                    <div class="{{ session('flash-style') }}">{{ session('flash-message') }}</div>
+                @endif
                 @yield('content')
             </div>
         </div>

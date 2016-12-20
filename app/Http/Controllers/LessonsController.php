@@ -28,6 +28,7 @@ class LessonsController extends Controller
 
         $business = Business::findOrFail($request->businessId);
         $business->lessons()->save($lesson);
+        flash('Lesson added.');
 
         return back();
     }
@@ -45,7 +46,7 @@ class LessonsController extends Controller
                 'required',
                 Rule::unique('lessons')->where(function ($query) use ($businessId) {
                     $query->where('business_id', $businessId);
-                }),
+                })->ignore($lesson->id),
             ],
             'capacity' => 'required|numeric|min:1',
         ]);
@@ -53,16 +54,17 @@ class LessonsController extends Controller
         $lesson->name = $request->name;
         $lesson->capacity = $request->capacity;
         $lesson->update();
+        flash('Lesson updated.');
 
-        return back();
+        return redirect("/businesses/" . $lesson->business->slug);
     }
 
-    public function destroy(Lesson $lesson)
+    public function destroy(Request $request, Lesson $lesson)
     {
-        $slug = $lesson->business->slug;
         $lesson->delete();
+        flash('Lesson deleted.', 'flash-alert');
 
-        return redirect("/businesses/$slug");
+        return redirect("/businesses/" . $lesson->business->slug);
     }
 
 }

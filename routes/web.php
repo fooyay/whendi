@@ -22,3 +22,12 @@ Route::post('lessons', 'LessonsController@store');
 Route::get('lessons/{lesson}/edit', 'LessonsController@edit');
 Route::patch('lessons/{lesson}', 'LessonsController@update');
 Route::delete('lessons/{lesson}', 'LessonsController@destroy');
+
+Auth::routes(); // user registration, login, and password reset
+
+Route::get('/home', 'HomeController@index');
+
+
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('admin', 'PagesController@admin');
+});

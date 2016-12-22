@@ -82,4 +82,15 @@ class BusinessesController extends Controller
     {
         return view('businesses.show', compact('business'));
     }
+
+    public function edit(Request $request, Business $business)
+    {
+        if($business->owner != $request->user())
+        {
+            flash('Only the business owner may edit the business profile information.', 'flash-alert');
+            return back();
+        }
+
+        return view('businesses.edit', compact('business'));
+    }
 }

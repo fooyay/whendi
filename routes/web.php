@@ -17,6 +17,7 @@ Route::get('features', 'PagesController@features');
 
 Route::get('businesses', 'BusinessesController@index');
 Route::get('businesses/register', 'BusinessesController@create');
+Route::post('businesses', 'BusinessesController@store');
 Route::get('businesses/{business}', 'BusinessesController@show');
 
 Route::post('lessons', 'LessonsController@store');

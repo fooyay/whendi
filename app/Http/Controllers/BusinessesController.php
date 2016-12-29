@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\Http\Requests\StoreBusiness;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -37,29 +38,11 @@ class BusinessesController extends Controller
     /**
      * Save a new business record in the database.
      *
-     * @param Request $request
+     * @param StoreBusiness|Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(StoreBusiness $request)
     {
-        $owner = $request->user();
-        if(empty($owner))
-        {
-            flash('You must be a registered user to proceed. Please login or register.', 'flash-alert');
-            return redirect("/");
-        }
-
-        // The slug needs to be unique as well. Adding this to the request.
-        $request->merge(array('slug' => str_slug($request->name)));
-        $customErrorMessages = [
-            'unique' => "That name is already taken.",
-        ];
-        $this->validate($request, [
-            'name' => 'required|unique:businesses',
-            'slug' => 'required|unique:businesses',
-            'zip_code' => 'required|regex:/\b\d{5}\b/',
-        ], $customErrorMessages);
-
         $business = new Business;
         $business->name = $request->name;
         $business->slug = $request->slug;

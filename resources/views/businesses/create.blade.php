@@ -13,7 +13,7 @@
     @if (count($errors) > 0)
         <span style="color:red">
             <ul>
-                @foreach ($errors->all() as $error)
+                @foreach ($errors->unique() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>

@@ -29,10 +29,10 @@
     @endif
 
     <form method="POST" action="/lessons">
-        <b>Name: </b>
-        <input type="text" name="name" value="{{ old('name') }}" required><br />
-        <b>Capacity: </b>
-        <input type="number" name="capacity" min="1" size="5" value="{{ old('capacity') }}" required><br />
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" value="{{ old('name') }}" required><br />
+        <label for="capacity">Capacity: </label>
+        <input type="number" name="capacity" id="capacity" min="1" size="5" value="{{ old('capacity') }}" required><br />
         {{ csrf_field() }}
         <input type="hidden" name="businessId" value="{{ $business->id }}">
         <button type="submit">Add Lesson</button>

@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 
 class UpdateBusiness extends FormRequest
@@ -36,18 +35,12 @@ class UpdateBusiness extends FormRequest
      */
     public function rules()
     {
-        $business = $this->business;
+        $ignoreThisRow = $this->business->id;
 
         // The slug needs to be unique as well.
         return [
-            'name' => [
-                'required',
-                Rule::unique('businesses')->ignore($business->id),
-            ],
-            'slug' => [
-                'required',
-                Rule::unique('businesses')->ignore($business->id),
-            ],
+            'name' => 'required|unique:businesses,name,' . $ignoreThisRow,
+            'slug' => 'required|unique:businesses,slug,' . $ignoreThisRow,
             'zip_code' => 'required|regex:/\b\d{5}\b/',
         ];
     }

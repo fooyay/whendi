@@ -15,8 +15,7 @@ class UpdateBusiness extends FormRequest
      */
     public function authorize()
     {
-        $business = $this->route('business');
-        return ($business->owner == $this->user());
+        return ($this->business->owner == $this->user());
     }
 
     /**
@@ -37,7 +36,7 @@ class UpdateBusiness extends FormRequest
      */
     public function rules()
     {
-        $business = $this->route('business');
+        $business = $this->business;
 
         // The slug needs to be unique as well.
         return [

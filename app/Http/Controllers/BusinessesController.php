@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use App\Http\Requests\StoreBusiness;
+use App\Http\Requests\UpdateBusiness;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 /**
  * Class BusinessesController
@@ -84,31 +84,8 @@ class BusinessesController extends Controller
         return view('businesses.edit', compact('business'));
     }
 
-    public function update(Request $request, Business $business)
+    public function update(UpdateBusiness $request, Business $business)
     {
-        if($business->owner != $request->user())
-        {
-            flash('Only the business owner may edit the business profile information.', 'flash-alert');
-            return back();
-        }
-
-        // The slug needs to be unique as well. Adding this to the request.
-        $request->merge(array('slug' => str_slug($request->name)));
-        $customErrorMessages = [
-            'unique' => "That name is already taken.",
-        ];
-        $this->validate($request, [
-            'name' => [
-                'required',
-                Rule::unique('businesses')->ignore($business->id),
-            ],
-            'slug' => [
-                'required',
-                Rule::unique('businesses')->ignore($business->id),
-            ],
-            'zip_code' => 'required|regex:/\b\d{5}\b/',
-        ], $customErrorMessages);
-
         $business->name = $request->name;
         $business->slug = $request->slug;
         $business->zip_code = $request->zip_code;

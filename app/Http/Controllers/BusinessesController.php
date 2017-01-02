@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Business;
 use App\Http\Requests\StoreBusiness;
 use App\Http\Requests\UpdateBusiness;
-use Illuminate\Http\Request;
+use App\Http\Requests\EditBusiness;
 
 /**
  * Class BusinessesController
@@ -38,7 +38,7 @@ class BusinessesController extends Controller
     /**
      * Save a new business record in the database.
      *
-     * @param StoreBusiness|Request $request
+     * @param StoreBusiness $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(StoreBusiness $request)
@@ -69,21 +69,25 @@ class BusinessesController extends Controller
     /**
      * Present the form to edit a business. Must be the business owner.
      *
-     * @param Request $request
+     * Logic exists in the EditBusiness form request, do not remove
+     * from the argument list.
+     *
+     * @param EditBusiness $request
      * @param Business $business
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Request $request, Business $business)
+    public function edit(EditBusiness $request, Business $business)
     {
-        if($business->owner != $request->user())
-        {
-            flash('Only the business owner may edit the business profile information.', 'flash-alert');
-            return back();
-        }
-
         return view('businesses.edit', compact('business'));
     }
 
+    /**
+     * Update the record. Must be the business owner.
+     *
+     * @param UpdateBusiness $request
+     * @param Business $business
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update(UpdateBusiness $request, Business $business)
     {
         $business->name = $request->name;

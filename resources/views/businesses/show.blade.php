@@ -34,7 +34,7 @@
         <label for="capacity">Capacity: </label>
         <input type="number" name="capacity" id="capacity" min="1" size="5" value="{{ old('capacity') }}" required><br />
         {{ csrf_field() }}
-        <input type="hidden" name="businessId" value="{{ $business->id }}">
+        <input type="hidden" name="business_id" value="{{ $business->id }}">
         <button type="submit">Add Lesson</button>
     </form>
 @stop

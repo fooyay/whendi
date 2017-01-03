@@ -4,29 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use App\Lesson;
+use App\Http\Requests\StoreLesson;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 
 class LessonsController extends Controller
 {
-    public function store(Request $request)
+    public function store(StoreLesson $request)
     {
-        $this->validate($request, [
-           'name' => [
-               'required',
-                Rule::unique('lessons')->where(function ($query) use ($request) {
-                    $query->where('business_id', $request->businessId);
-                }),
-           ],
-           'capacity' => 'required|numeric|min:1',
-        ]);
-
         $lesson = new Lesson;
         $lesson->name = $request->name;
         $lesson->capacity = $request->capacity;
 
-        $business = Business::findOrFail($request->businessId);
+        $business = Business::find($request->business_id);
         $business->lessons()->save($lesson);
         flash('Lesson added.');
 

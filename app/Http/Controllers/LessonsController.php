@@ -6,9 +6,8 @@ use App\Business;
 use App\Lesson;
 use App\Http\Requests\StoreLesson;
 use App\Http\Requests\EditLesson;
+use App\Http\Requests\UpdateLesson;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-
 
 class LessonsController extends Controller
 {
@@ -30,19 +29,8 @@ class LessonsController extends Controller
         return view('lessons.edit', compact('lesson'));
     }
 
-    public function update(Request $request, Lesson $lesson)
+    public function update(UpdateLesson $request, Lesson $lesson)
     {
-        $businessId = $lesson->business_id;
-        $this->validate($request, [
-            'name' => [
-                'required',
-                Rule::unique('lessons')->where(function ($query) use ($businessId) {
-                    $query->where('business_id', $businessId);
-                })->ignore($lesson->id),
-            ],
-            'capacity' => 'required|numeric|min:1',
-        ]);
-
         $lesson->name = $request->name;
         $lesson->capacity = $request->capacity;
         $lesson->update();

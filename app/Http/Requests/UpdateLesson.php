@@ -2,12 +2,11 @@
 
 namespace App\Http\Requests;
 
-use App\Business;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 
-class StoreLesson extends FormRequest
+class UpdateLesson extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,18 +15,17 @@ class StoreLesson extends FormRequest
      */
     public function authorize()
     {
-        $business = Business::find($this->business_id);
-        return (!empty($business) and ($business->owner == $this->user()));
+        return ($this->lesson->business->owner == $this->user());
     }
 
     /**
      * Set the flash and redirect if unauthorized.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Symfony\Component\HttpFoundation\Response
      */
     public function forbiddenResponse()
     {
-        flash('Only the business owner may edit the business profile information.', 'flash-alert');
+        flash('Only the business owner may edit the business\'s lessons.', 'flash-alert');
         return back();
     }
 
@@ -42,8 +40,8 @@ class StoreLesson extends FormRequest
             'name' => [
                 'required',
                 Rule::unique('lessons')->where(function ($query) {
-                    $query->where('business_id', $this->business_id);
-                }),
+                    $query->where('business_id', $this->lesson->business_id);
+                })->ignore($this->lesson->id),
             ],
             'capacity' => 'required|numeric|min:1',
         ];

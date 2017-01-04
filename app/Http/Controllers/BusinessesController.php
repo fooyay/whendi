@@ -6,6 +6,8 @@ use App\Business;
 use App\Http\Requests\StoreBusiness;
 use App\Http\Requests\UpdateBusiness;
 use App\Http\Requests\EditBusiness;
+use Illuminate\Http\Request;
+
 
 /**
  * Class BusinessesController
@@ -61,9 +63,10 @@ class BusinessesController extends Controller
      * @param Business $business
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Business $business)
+    public function show(Business $business, Request $request)
     {
-        return view('businesses.show', compact('business'));
+        $isOwner  = ($business->owner == $request->user());
+        return view('businesses.show', compact(['business', 'isOwner']));
     }
 
     /**

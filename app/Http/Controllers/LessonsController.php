@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Business;
 use App\Lesson;
 use App\Http\Requests\StoreLesson;
+use App\Http\Requests\EditLesson;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -24,7 +25,7 @@ class LessonsController extends Controller
         return back();
     }
 
-    public function edit(Lesson $lesson)
+    public function edit(EditLesson $request, Lesson $lesson)
     {
         return view('lessons.edit', compact('lesson'));
     }

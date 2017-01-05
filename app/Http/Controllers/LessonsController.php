@@ -7,7 +7,7 @@ use App\Lesson;
 use App\Http\Requests\StoreLesson;
 use App\Http\Requests\EditLesson;
 use App\Http\Requests\UpdateLesson;
-use Illuminate\Http\Request;
+use App\Http\Requests\DestroyLesson;
 
 class LessonsController extends Controller
 {
@@ -39,7 +39,7 @@ class LessonsController extends Controller
         return redirect("/businesses/" . $lesson->business->slug);
     }
 
-    public function destroy(Request $request, Lesson $lesson)
+    public function destroy(DestroyLesson $request, Lesson $lesson)
     {
         $lesson->delete();
         flash('Lesson deleted.', 'flash-alert');

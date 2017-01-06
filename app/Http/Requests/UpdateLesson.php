@@ -46,4 +46,16 @@ class UpdateLesson extends FormRequest
             'capacity' => 'required|numeric|min:1',
         ];
     }
+
+    /**
+     * Trimming the data happens here.
+     *
+     * @return array
+     */
+    public function all()
+    {
+        $attributes = parent::all();
+        $attributes['name'] = trim($attributes['name']);
+        return $attributes;
+    }
 }

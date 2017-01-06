@@ -9,6 +9,10 @@
     <p><b>Zip Code: </b>{{$business->zip_code}}</p>
     <p><b>Active: </b>{{$business->active}}</p>
 
+    @if ($isOwner)
+        <p><a href="/businesses/{{$business->slug}}/edit">Click here</a> to edit this business's profile data.</p>
+    @endif
+
     <p>This business offers the following lessons:</p>
     <ul>
         @foreach($business->lessons as $lesson)

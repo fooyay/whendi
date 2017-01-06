@@ -51,6 +51,7 @@ class StoreBusiness extends FormRequest
     public function all()
     {
         $attributes = parent::all();
+        $attributes['name'] = trim($attributes['name']);
         $attributes['slug'] = str_slug($attributes['name']);
         return $attributes;
     }

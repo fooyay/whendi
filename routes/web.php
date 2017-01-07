@@ -16,7 +16,11 @@ Route::get('about', 'PagesController@about');
 Route::get('features', 'PagesController@features');
 
 Route::get('businesses', 'BusinessesController@index');
+Route::get('businesses/register', 'BusinessesController@create');
+Route::post('businesses', 'BusinessesController@store');
 Route::get('businesses/{business}', 'BusinessesController@show');
+Route::get('businesses/{business}/edit', 'BusinessesController@edit');
+Route::patch('businesses/{business}', 'BusinessesController@update');
 
 Route::post('lessons', 'LessonsController@store');
 Route::get('lessons/{lesson}/edit', 'LessonsController@edit');

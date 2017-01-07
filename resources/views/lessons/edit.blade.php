@@ -15,10 +15,10 @@
 
     <form method="POST" action="/lessons/{{ $lesson->id }}">
         {{ method_field('PATCH') }}
-        <b>Name: </b>
-        <input type="text" name="name" value="{{ $lesson->name }}" required><br />
-        <b>Capacity: </b>
-        <input type="number" name="capacity" min="1" size="5" value="{{ $lesson->capacity }}" required><br />
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" value="{{ $lesson->name }}" required><br />
+        <label for="capacity">Capacity: </label>
+        <input type="number" name="capacity" id="capacity" min="1" size="5" value="{{ $lesson->capacity }}" required><br />
         {{ csrf_field() }}
         <button type="submit">Update Lesson</button>
     </form>

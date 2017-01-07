@@ -3,9 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Business extends Model
 {
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
     public function owner()
     {
         return $this->belongsTo('App\User', 'owner_id');

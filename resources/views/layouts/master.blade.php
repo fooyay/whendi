@@ -4,7 +4,8 @@
         @include('includes.head')
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div>
+        {{--<div class="flex-center position-ref full-height">--}}
             @include('includes.header')
 
             <div class="content">

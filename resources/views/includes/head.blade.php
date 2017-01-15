@@ -4,21 +4,19 @@
         <meta name="description" content="When Can You Do It, web-based appointment scheduling.">
         <meta name="author" content="fooyay">
 
-        <title>When Can You Do It</title>
+        <title>{{ config('app.name') }}</title>
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Kantumruy" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="/css/app.css" rel="stylesheet">
+
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+            /*
 
             .full-height {
                 height: 100vh;
@@ -60,27 +58,13 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
-
-            .mirror {
-                display: inline-block;
-                -moz-transform: scale(-1, 1);
-                -webkit-transform: scale(-1, 1);
-                -o-transform: scale(-1, 1);
-                -ms-transform: scale(-1, 1);
-                transform: scale(-1, 1);
-            }
-
-            .flash-good {
-                background: green;
-                color: white;
-                padding: 5px;
-            }
-
-            .flash-alert {
-                background: red;
-                color: white;
-                padding: 5px;
-            }
+            }*/
 
         </style>
+
+        <!-- Scripts -->
+        <script>
+            window.Laravel = <?php echo json_encode([
+                'csrfToken' => csrf_token(),
+            ]); ?>
+        </script>

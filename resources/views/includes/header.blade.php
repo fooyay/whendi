@@ -1,5 +1,5 @@
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div>
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else

@@ -1,9 +1,39 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// @import url(https://fonts.googleapis.com/css?family=Kantumruy);
 
 // Variables
-@import "variables";
+// @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$primaryColor: blue;
+
+body {
+  color: $primaryColor;
+  background-color: #fff;
+  font-family: "Kantumruy", serif;
+}
+
+.mirror {
+  display: inline-block;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.flash-good {
+  background: green;
+  color: white;
+  padding: 5px;
+}
+
+.flash-alert {
+  background: red;
+  color: white;
+  padding: 5px;
+}
+

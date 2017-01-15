@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
-                <div class="title m-b-md">
+                <div>
                     Features
                 </div>
 
-                <div class="row">
+                <div>
                     <p>Stuff to be added here...</p>
                 </div>
 @stop

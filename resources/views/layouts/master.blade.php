@@ -8,13 +8,14 @@
         {{--<div class="flex-center position-ref full-height">--}}
             @include('includes.header')
 
-            <div class="content">
+            <div class="container-fluid content">
                 @if(session()->has('flash-message'))
                     <div class="{{ session('flash-style') }}">{{ session('flash-message') }}</div>
                 @endif
                 @yield('content')
             </div>
+
+            @include('includes.footer')
         </div>
-        @include('includes.footer')
     </body>
 </html>

@@ -15,6 +15,9 @@
         <!-- Styles -->
         <link href="/css/app.css" rel="stylesheet">
 
+        <!-- JS? -->
+        <script src="{{ elixir('js/app.js') }}"></script>
+
         <style>
             /*
 

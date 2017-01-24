@@ -13,9 +13,9 @@
         <link href="https://fonts.googleapis.com/css?family=Kantumruy" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
 
-        <!-- JS? -->
+        <!-- JS -->
         <script src="{{ elixir('js/app.js') }}"></script>
 
         <style>

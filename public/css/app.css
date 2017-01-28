@@ -5767,14 +5767,52 @@ button.close {
     display: none !important; } }
 
 body {
-  color: blue;
   background-color: #fff;
-  font-family: "Kantumruy", serif; }
+  font: 400 15px "Libre Franklin", sans-serif;
+  line-height: 1.8;
+  color: #818181; }
+
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 30px; }
+
+h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  color: #303030;
+  font-weight: 400;
+  margin-bottom: 30px; }
+
+.navbar {
+  margin-bottom: 0;
+  background-color: blue;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  font-family: "Libre Baskerville", serif;
+  border-radius: 0; }
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important; }
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: blue !important;
+  background-color: #fff !important; }
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important; }
 
 .jumbotron {
   background-color: blue;
   color: white;
   padding: 100px 25px; }
+
+.jumbotron h1 {
+  font-family: "Libre Baskerville", serif; }
 
 .container-fluid {
   padding: 60px 50px; }
@@ -5783,7 +5821,7 @@ body {
   background-color: #f6f6f6; }
 
 .logo {
-  color: green;
+  color: blue;
   font-size: 200px; }
 
 .logo-small {
@@ -5809,13 +5847,13 @@ body {
 
 .carousel-control.right, .carousel-control.left {
   background-image: none;
-  color: #9999ff; }
+  color: #2281af; }
 
 .carousel-indicators li {
-  border-color: #9999ff; }
+  border-color: #2281af; }
 
 .carousel-indicators li.active {
-  background-color: #9999ff; }
+  background-color: #2281af; }
 
 .item h4 {
   font-size: 19px;
@@ -5828,7 +5866,7 @@ body {
   font-style: normal; }
 
 .panel {
-  border: 1px solid #9999ff;
+  border: 1px solid #2281af;
   border-radius: 0;
   -webkit-transition: box-shadow 0.5a;
   transition: box-shadow 0.5a; }
@@ -5837,9 +5875,9 @@ body {
   box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.2); }
 
 .panel-footer .btn:hover {
-  border: 1px solid #9999ff;
+  border: 1px solid #2281af;
   background-color: #fff !important;
-  color: #9999ff; }
+  color: #2281af; }
 
 .panel-heading {
   color: #fff !important;
@@ -5858,7 +5896,7 @@ body {
   font-size: 32px; }
 
 .panel-footer h4 {
-  color: #9999ff;
+  color: #2281af;
   font-size: 14px; }
 
 .panel-footer .btn {
@@ -5880,5 +5918,8 @@ body {
   background: red;
   color: white;
   padding: 5px; }
+
+.footer {
+  font-size: smaller; }
 
 /*# sourceMappingURL=app.css.map */

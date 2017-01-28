@@ -6,8 +6,6 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $hour = date('H');
-        $dayMode = $hour > 5 && $hour < 18;
         $lessonTypes = ['horse riding', 'piano', 'yoga'];
         return view('pages.welcome', compact('dayMode', 'lessonTypes'));
     }

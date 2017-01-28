@@ -1,5 +1,38 @@
-@extends('layouts.master')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @include('includes.head')
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">When Can You Do It?</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#examples">EXAMPLES</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    @if (Auth::check())
+                        <li><a href="/logout">LOGOUT</a></li>
+                    @else
+                        <li><a href="/login">LOGIN</a></li>
+                        <li><a href="/register">REGISTER</a></li>
+                    @endif
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="jumbotron text-center">
         <h1>When Can You Do It?</h1>
         <p>An online system to reserve an appointment with your favorite business.</p>
@@ -49,7 +82,7 @@
         </a>
     </div>
 
-    <div class="container-fluid text-center">
+    <div id="services" class="container-fluid text-center">
         <h2>SERVICES</h2>
         <h4>Here's how we can help:</h4>
         <br>
@@ -89,7 +122,7 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-grey">
+    <div id="about" class="container-fluid bg-grey">
         <div class="row">
             <div class="col-sm-8">
                 <h2>About Us</h2>
@@ -116,7 +149,7 @@
         </div>
     </div>
 
-    <div class="container-fluid text-center bg-grey">
+    <div id="examples" class="container-fluid text-center bg-grey">
         <h2>Examples</h2>
         <h4>Many types of businesses need appointment scheduling:</h4>
         <div class="row text-center">
@@ -144,7 +177,7 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div id="pricing" class="container-fluid">
         <div class="text-center">
             <h2>Pricing</h2>
             <h4>Choose a payment plan that works for your business:</h4>
@@ -205,7 +238,7 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-grey">
+    <div id="contact" class="container-fluid bg-grey">
         <h2 class="text-center">Contact</h2>
         <div class="row">
             <div class="col-sm-5">
@@ -244,6 +277,7 @@
                     var mapProp = {
                         center:myCenter,
                         zoom:12,
+                        scrollwheel: false,
                         mapTypeId:google.maps.MapTypeId.ROADMAP
                     };
 
@@ -261,12 +295,28 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        {{-- A different greetingi based on time of day. --}}
-        @if( $dayMode )
-            <p>Good Day!</p>
-        @else
-            <p>Good Evening!</p>
-        @endif
-    </div>
-@stop
+    <script>
+        $(document).ready(function(){
+            // Add smooth scrolling to all links in navbar
+            $(".navbar a").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() to add smooth page scroll
+                    // The optional number (900) is the number of milliseconds it takes to scroll to the area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function() {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // end if
+            });
+        })
+    </script>
+    @include('includes.footer')
+</body>
+</html>

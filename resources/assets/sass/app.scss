@@ -8,20 +8,70 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-$primaryColor: blue;
-$toolColor: adjust_color($primaryColor, $lightness: +30%);
-$secondaryColor: white;
+$primaryColor: #818181;
+$accentColor: blue;
+$toolColor: #2281af;
 
 body {
-  color: $primaryColor;
   background-color: #fff;
-  font-family: "Kantumruy", serif;
+  //font-family: "Libre Franklin", sans-serif;
+  font: 400 15px "Libre Franklin", sans-serif;
+  line-height: 1.8;
+  color: $primaryColor;
+}
+
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+h4 {
+  font-size: 19px;
+  line-height: 1.375em;
+  color: #303030;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+$navBgColor: $accentColor;
+
+.navbar {
+  margin-bottom: 0;
+  background-color: $navBgColor;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  font-family: "Libre Baskerville", serif;
+  //line-height: 1.42857143;
+  //letter-spacing: 4px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: $navBgColor !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
 }
 
 .jumbotron {
-  background-color: $primaryColor;
-  color: $secondaryColor;
+  background-color: $accentColor;
+  color: white;
   padding: 100px 25px;
+}
+
+.jumbotron h1 {
+  font-family: "Libre Baskerville", serif;
 }
 
 .container-fluid {
@@ -32,12 +82,12 @@ body {
 }
 
 .logo {
-  color: green;
+  color: $accentColor;
   font-size: 200px;
 }
 
 .logo-small {
-  color: $primaryColor;
+  color: $accentColor;
   font-size: 50px;
 }
 
@@ -107,7 +157,7 @@ body {
 
 .panel-heading {
   color: #fff !important;
-  background-color: $primaryColor !important;
+  background-color: $accentColor !important;
   padding: 25px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 0px;
@@ -131,7 +181,7 @@ body {
 
 .panel-footer .btn {
   margin: 15px 0;
-  background-color: $primaryColor;
+  background-color: $accentColor;
   color: #fff;
 }
 
@@ -156,3 +206,6 @@ body {
   padding: 5px;
 }
 
+.footer {
+  font-size: smaller;
+}

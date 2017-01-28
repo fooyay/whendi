@@ -3,9 +3,7 @@
     <head>
         @include('includes.head')
     </head>
-    <body>
-        <div>
-        {{--<div class="flex-center position-ref full-height">--}}
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
             @include('includes.header')
 
             <div class="container-fluid content">
@@ -16,6 +14,5 @@
             </div>
 
             @include('includes.footer')
-        </div>
     </body>
 </html>

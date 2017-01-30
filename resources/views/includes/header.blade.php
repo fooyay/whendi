@@ -1,3 +1,4 @@
+{{--For the general template, this navbar needs to be replaced with a more helpful version.--}}
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">

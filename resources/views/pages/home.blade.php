@@ -6,19 +6,8 @@
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 @include('pages.home.navbar')
-
-    <div class="jumbotron text-center">
-        <h1>When Can You Do It?</h1>
-        <p>An online system to reserve an appointment with your favorite business.</p>
-        <form class="form-inline">
-            <div class="input-group">
-                <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger">Subscribe</button>
-                </div>
-            </div>
-        </form>
-    </div>
+@include('pages.home.jumbotron')
+@include('pages.home.quotes')
 
     <h2 align="center">Here's what people are saying:</h2>
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
@@ -55,6 +44,33 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+<div id="about" class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>About Us</h2>
+            <h4>Our People</h4>
+            <p>We want ot hear from you.</p>
+            <button class="btn btn-default btn-lg">Get In Touch</button>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-signal logo"></span>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo"></span>
+        </div>
+        <div class="col-sm-8">
+            <h2>Our Values</h2>
+            <h4><strong>MISSION:</strong> Our mission is to make appointments easier.</h4>
+            <p><strong>VISION:</strong> An easy to use online system that replaces crude pencils and paper ledgers.</p>
+        </div>
+    </div>
+</div>
 
     <div id="services" class="container-fluid text-center">
         <h2>SERVICES</h2>

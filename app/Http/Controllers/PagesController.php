@@ -6,8 +6,15 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $lessonTypes = ['horse riding', 'piano', 'yoga'];
-        return view('pages.home', compact('dayMode', 'lessonTypes'));
+        $quotes = [
+            ["This is so much better than post-its on a board that no one can see.",
+                "Jane Doe, Instructor, Yanni's Yoga"],
+            ["Now I can see who's coming - using my phone!",
+                "Holli Hunter, Owner, Horses with Holli"],
+            ["Now maybe you can make time to feed me.",
+                "Paxil, Supervisor, When Can You Do It"],
+        ];
+        return view('pages.home', compact('quotes'));
     }
 
     public function about()

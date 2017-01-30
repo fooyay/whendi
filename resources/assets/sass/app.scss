@@ -11,9 +11,10 @@
 $primaryColor: #818181;
 $accentColor: blue;
 $toolColor: #2281af;
+$backgroundColor: #fff;
 
 body {
-  background-color: #fff;
+  background-color: $backgroundColor;
   //font-family: "Libre Franklin", sans-serif;
   font: 400 15px "Libre Franklin", sans-serif;
   line-height: 1.8;
@@ -37,6 +38,7 @@ h4 {
 }
 
 $navBgColor: $accentColor;
+$navFgColor: $backgroundColor;
 
 .navbar {
   margin-bottom: 0;
@@ -45,23 +47,41 @@ $navBgColor: $accentColor;
   border: 0;
   font-size: 12px !important;
   font-family: "Libre Baskerville", serif;
-  //line-height: 1.42857143;
-  //letter-spacing: 4px;
   border-radius: 0;
 }
 
 .navbar li a, .navbar .navbar-brand {
-  color: #fff !important;
+  color: $navFgColor !important;
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
   color: $navBgColor !important;
-  background-color: #fff !important;
+  background-color: $navFgColor !important;
 }
 
 .navbar-default .navbar-toggle {
   border-color: transparent;
-  color: #fff !important;
+  background-color: $navBgColor;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: $navFgColor;
+}
+
+.navbar-default .navbar-toggle:focus {
+  background-color: $navFgColor;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: $navFgColor !important; // color of the 3 lines
+}
+
+.navbar-toggle:hover .icon-bar {
+  background-color: $navBgColor !important; // color of the 3 lines
+}
+
+.navbar-toggle:focus .icon-bar {
+  background-color: $navBgColor !important; // color of the 3 lines
 }
 
 .jumbotron {
@@ -151,12 +171,12 @@ $navBgColor: $accentColor;
 
 .panel-footer .btn:hover {
   border: 1px solid $toolColor;
-  background-color: #fff !important;
+  background-color: $backgroundColor !important;
   color: $toolColor;
 }
 
 .panel-heading {
-  color: #fff !important;
+  color: $backgroundColor !important;
   background-color: $accentColor !important;
   padding: 25px;
   border-bottom: 1px solid transparent;
@@ -167,7 +187,7 @@ $navBgColor: $accentColor;
 }
 
 .panel-footer {
-  background-color: #fff !important;
+  background-color: $backgroundColor !important;
 }
 
 .panel-footer h3 {
@@ -182,7 +202,7 @@ $navBgColor: $accentColor;
 .panel-footer .btn {
   margin: 15px 0;
   background-color: $accentColor;
-  color: #fff;
+  color: $backgroundColor;
 }
 
 .mirror {

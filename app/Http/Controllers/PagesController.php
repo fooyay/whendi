@@ -7,7 +7,7 @@ class PagesController extends Controller
     public function home()
     {
         $lessonTypes = ['horse riding', 'piano', 'yoga'];
-        return view('pages.welcome', compact('dayMode', 'lessonTypes'));
+        return view('pages.home', compact('dayMode', 'lessonTypes'));
     }
 
     public function about()

@@ -5804,7 +5804,22 @@ h4 {
 
 .navbar-default .navbar-toggle {
   border-color: transparent;
-  color: #fff !important; }
+  background-color: blue; }
+
+.navbar-default .navbar-toggle:hover {
+  background-color: #fff; }
+
+.navbar-default .navbar-toggle:focus {
+  background-color: #fff; }
+
+.navbar-toggle .icon-bar {
+  background-color: #fff !important; }
+
+.navbar-toggle:hover .icon-bar {
+  background-color: blue !important; }
+
+.navbar-toggle:focus .icon-bar {
+  background-color: blue !important; }
 
 .jumbotron {
   background-color: blue;

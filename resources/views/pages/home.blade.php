@@ -9,48 +9,8 @@
 @include('pages.home.jumbotron')
 @include('pages.home.quotes')
 @include('pages.home.about')
+@include('pages.home.services')
 
-
-
-    <div id="services" class="container-fluid text-center">
-        <h2>SERVICES</h2>
-        <h4>Here's how we can help:</h4>
-        <br>
-        <div class="row">
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-briefcase logo-small"></span>
-                <h4>BUSINESSES</h4>
-                <p>Keep track of all of your appointments, online, in the cloud.</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-list-alt logo-small"></span>
-                <h4>EMPLOYEES</h4>
-                <p>Everyone has their own calendar.</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-user logo-small"></span>
-                <h4>CLIENTS</h4>
-                <p>Easy self-service, they can easily see your availability and sign up.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-picture logo-small"></span>
-                <h4>PRIVATE LABEL</h4>
-                <p>An option to integrate into your company's web site.</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-phone logo-small"></span>
-                <h4>MOBILE</h4>
-                <p>Manage your appointments using our app for iPhone and Android.</p>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-stats logo-small"></span>
-                <h4>ANALYTICS</h4>
-                <p>Learn which kind of appointments and resources have the best booking rates.</p>
-            </div>
-        </div>
-    </div>
 
     <div id="examples" class="container-fluid text-center bg-grey">
         <h2>Examples</h2>

@@ -112,6 +112,13 @@ $navFgColor: $backgroundColor;
   font-size: 50px;
 }
 
+.vertical-center {
+  display: inline-block;
+  float: none;
+  justify-content: center;
+  vertical-align: middle;
+}
+
 .thumbnail {
   padding: 0 0 15px 0;
   border: none;

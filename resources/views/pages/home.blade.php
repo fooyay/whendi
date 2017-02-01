@@ -8,34 +8,9 @@
 @include('pages.home.navbar')
 @include('pages.home.jumbotron')
 @include('pages.home.quotes')
+@include('pages.home.about')
 
 
-<div id="about" class="container-fluid bg-grey">
-    <div class="row">
-        <div class="col-sm-8">
-            <h2>About Us</h2>
-            <h4>Our People</h4>
-            <p>We want ot hear from you.</p>
-            <button class="btn btn-default btn-lg">Get In Touch</button>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-signal logo"></span>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-globe logo"></span>
-        </div>
-        <div class="col-sm-8">
-            <h2>Our Values</h2>
-            <h4><strong>MISSION:</strong> Our mission is to make appointments easier.</h4>
-            <p><strong>VISION:</strong> An easy to use online system that replaces crude pencils and paper ledgers.</p>
-        </div>
-    </div>
-</div>
 
     <div id="services" class="container-fluid text-center">
         <h2>SERVICES</h2>
@@ -73,33 +48,6 @@
                 <span class="glyphicon glyphicon-stats logo-small"></span>
                 <h4>ANALYTICS</h4>
                 <p>Learn which kind of appointments and resources have the best booking rates.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="about" class="container-fluid bg-grey">
-        <div class="row">
-            <div class="col-sm-8">
-                <h2>About Us</h2>
-                <h4>Our People</h4>
-                <p>We want ot hear from you.</p>
-                <button class="btn btn-default btn-lg">Get In Touch</button>
-            </div>
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-signal logo"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <span class="glyphicon glyphicon-globe logo"></span>
-            </div>
-            <div class="col-sm-8">
-                <h2>Our Values</h2>
-                <h4><strong>MISSION:</strong> Our mission is to make appointments easier.</h4>
-                <p><strong>VISION:</strong> An easy to use online system that replaces crude pencils and paper ledgers.</p>
             </div>
         </div>
     </div>
@@ -239,7 +187,7 @@
                     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
                     var marker = new google.maps.Marker({
-                        position:myCenter,
+                        position:myCenter
                     });
 
                     marker.setMap(map);

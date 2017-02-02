@@ -10,35 +10,7 @@
 @include('pages.home.quotes')
 @include('pages.home.about')
 @include('pages.home.services')
-
-
-    <div id="examples" class="container-fluid text-center bg-grey">
-        <h2>Examples</h2>
-        <h4>Many types of businesses need appointment scheduling:</h4>
-        <div class="row text-center">
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="/images/horsejumping.jpg" alt="horse riding">
-                    <p><strong>Horse Riding Lessons</strong></p>
-                    <p>Riders Up!</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="/images/piano.jpg" alt="piano">
-                    <p><strong>Piano Lessons</strong></p>
-                    <p>Tickle the ivories.</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="/images/yoga.jpg" alt="yoga">
-                    <p><strong>Yoga Lessons</strong></p>
-                    <p>As many reps as possible.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+@include('pages.home.examples')
 
     <div id="pricing" class="container-fluid">
         <div class="text-center">

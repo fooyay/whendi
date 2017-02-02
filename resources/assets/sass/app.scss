@@ -214,6 +214,11 @@ $navFgColor: $backgroundColor;
   color: $backgroundColor;
 }
 
+.googleMap {
+  width: 100%;
+  height: 400px;
+}
+
 .mirror {
   display: inline-block;
   -moz-transform: scale(-1, 1);

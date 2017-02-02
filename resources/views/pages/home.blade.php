@@ -11,67 +11,9 @@
 @include('pages.home.about')
 @include('pages.home.services')
 @include('pages.home.examples')
+@include('pages.home.pricing')
 
-    <div id="pricing" class="container-fluid">
-        <div class="text-center">
-            <h2>Pricing</h2>
-            <h4>Choose a payment plan that works for your business:</h4>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h1>Sole Proprietor</h1>
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>0</strong> employees</p>
-                        <p><strong>1</strong> web page</p>
-                        <p><strong>20</strong> appointment slots per day</p>
-                    </div>
-                    <div class="panel-footer">
-                        <h3>$20</h3>
-                        <h4>per month</h4>
-                        <button class="btn btn-lg">Sign Up</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h1>Small Business</h1>
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>1 - 10</strong> employees</p>
-                        <p><strong>1</strong> web page</p>
-                        <p><strong>200</strong> appointment slots per day</p>
-                    </div>
-                    <div class="panel-footer">
-                        <h3>$50</h3>
-                        <h4>per month</h4>
-                        <button class="btn btn-lg">Sign Up</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h1>Enterprise</h1>
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>11+</strong> employees</p>
-                        <p><strong>1</strong> web page</p>
-                        <p><strong>private label</strong> option</p>
-                        <p><strong>unlimited</strong> appointment slots per day</p>
-                    </div>
-                    <div class="panel-footer">
-                        <h3>Contact Us</h3>
-                        <h4>for pricing</h4>
-                        <button class="btn btn-lg">Sign Up</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div id="contact" class="container-fluid bg-grey">
         <h2 class="text-center">Contact</h2>

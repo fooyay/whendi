@@ -14,7 +14,33 @@ class PagesController extends Controller
             ["Now maybe you can make time to feed me.",
                 "Paxil, Supervisor, When Can You Do It"],
         ];
-        return view('pages.home', compact('quotes'));
+        $pricing_schedules = [
+            [
+                "heading" => "Sole Proprietor",
+                "users" => "1",
+                "slots" => "20",
+                "option" => "&nbsp;",
+                "amount" => "$20",
+                "period" => "per month",
+            ],
+            [
+                "heading" => "Small Business",
+                "users" => "2-10",
+                "slots" => "200",
+                "option" => "&nbsp;",
+                "amount" => "$40",
+                "period" => "per month",
+            ],
+            [
+                "heading" => "Enterprise",
+                "users" => "11+",
+                "slots" => "unlimited",
+                "option" => "private label option",
+                "amount" => "Contact Us",
+                "period" => "for pricing",
+            ],
+        ];
+        return view('pages.home', compact(['quotes', 'pricing_schedules']));
     }
 
     public function about()

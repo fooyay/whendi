@@ -15,13 +15,3 @@
 
         <!-- Styles -->
         <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
-
-        <!-- JS -->
-        <script src="{{ elixir('js/app.js') }}"></script>
-
-        <!-- Scripts -->
-        <script>
-            window.Laravel = <?php echo json_encode([
-                'csrfToken' => csrf_token(),
-            ]); ?>
-        </script>

@@ -15,3 +15,12 @@
         </div>
     </div>
 </foooter>
+<!-- JS -->
+<script src="{{ elixir('js/app.js') }}"></script>
+
+<!-- Scripts -->
+<script>
+    window.Laravel = <?php echo json_encode([
+        'csrfToken' => csrf_token(),
+    ]); ?>
+</script>

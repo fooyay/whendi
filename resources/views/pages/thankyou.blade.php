@@ -6,7 +6,7 @@
     <br />
     <br />
     <div align="center">
-        <a href="/home" class="btn btn-info" role="button">Return to Home Page</a>
+        <a href="/" class="btn btn-info" role="button">Return to Home Page</a>
     </div>
     <br />
     <br />

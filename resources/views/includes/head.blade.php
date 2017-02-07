@@ -6,8 +6,8 @@
 
         <title>{{ config('app.name') }}</title>
 
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        {{--<!-- CSRF Token -->--}}
+        {{--<meta name="csrf-token" content="{{ csrf_token() }}">--}}
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet" type="text/css">

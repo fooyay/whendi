@@ -30,6 +30,7 @@ Route::delete('lessons/{lesson}', 'LessonsController@destroy');
 Auth::routes(); // user registration, login, and password reset
 
 Route::get('/home', 'HomeController@index');
+Route::post('/contact-request', 'ContactsController@requestInformation');
 
 
 Route::group(['middleware' => 'admin'], function() {

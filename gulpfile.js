@@ -17,5 +17,6 @@ elixir((mix) => {
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/build/fonts/bootstrap')
        .sass('app.scss')
        .webpack('app.js')
-       .version(['css/app.css', 'js/app.js']);
+       .version(['css/app.css', 'js/app.js'])
+       .phpUnit();
 });

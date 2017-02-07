@@ -5946,7 +5946,15 @@ h4 {
   color: white;
   padding: 5px; }
 
-.footer {
-  font-size: smaller; }
+footer {
+  font-size: smaller;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+footer p {
+  margin-bottom: 0; }
+
+.no-padding {
+  padding: 0 0; }
 
 /*# sourceMappingURL=app.css.map */

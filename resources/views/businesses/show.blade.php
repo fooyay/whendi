@@ -28,13 +28,13 @@
         <h2>Add a Lesson</h2>
 
         @if (count($errors) > 0)
-            <span style="color:red">
+            <div class="error-list">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
-            </span>
+            </div>
         @endif
 
         <form method="POST" action="/lessons">

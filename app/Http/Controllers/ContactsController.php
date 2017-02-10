@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CommentFromContact;
 use Mail;
 
 class ContactsController extends Controller
 {
-    public function requestInformation(Request $request)
+    public function requestInformation(CommentFromContact $request)
     {
         // construct email message
         // leave as-is for now

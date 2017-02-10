@@ -9,13 +9,13 @@
     page from outside sources, if you have any.</p>
 
     @if (count($errors) > 0)
-        <span style="color:red">
+        <div class="error-list">
             <ul>
                 @foreach ($errors->unique() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
-        </span>
+        </div>
     @endif
 
     <form method="POST" action="/businesses/{{ $business->slug }}">

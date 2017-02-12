@@ -22,7 +22,7 @@ class BusinessesController extends Controller
      */
     public function index()
     {
-        $businesses = Business::all();
+        $businesses = Business::orderBy('name')->paginate(4);
 
         return view('businesses.index', compact('businesses'));
     }

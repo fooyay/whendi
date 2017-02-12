@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <form method="POST" action="/businesses">
+    <form method="POST" action="/directory">
         <label for="name">Name: </label>
         <input type="text" name="name" id="name" value="{{ old('name') }}" required><br />
         <label for="zip_code">Zip Code: </label>

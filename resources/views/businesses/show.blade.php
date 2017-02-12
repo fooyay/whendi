@@ -10,7 +10,7 @@
     <p><b>Active: </b>{{$business->active}}</p>
 
     @if ($isOwner)
-        <p><a href="/businesses/{{$business->slug}}/edit">Click here</a> to edit this business's profile data.</p>
+        <p><a href="/directory/{{$business->slug}}/edit">Click here</a> to edit this business's profile data.</p>
     @endif
 
     <p>This business offers the following lessons:</p>

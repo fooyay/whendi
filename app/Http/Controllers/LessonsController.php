@@ -36,7 +36,7 @@ class LessonsController extends Controller
         $lesson->update();
         flash('Lesson updated.');
 
-        return redirect("/businesses/" . $lesson->business->slug);
+        return redirect("/directory/" . $lesson->business->slug);
     }
 
     public function destroy(DestroyLesson $request, Lesson $lesson)
@@ -44,7 +44,7 @@ class LessonsController extends Controller
         $lesson->delete();
         flash('Lesson deleted.', 'flash-alert');
 
-        return redirect("/businesses/" . $lesson->business->slug);
+        return redirect("/directory/" . $lesson->business->slug);
     }
 
 }

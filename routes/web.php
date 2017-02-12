@@ -15,12 +15,12 @@ Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('features', 'PagesController@features');
 
-Route::get('businesses', 'BusinessesController@index');
-Route::get('businesses/register', 'BusinessesController@create');
-Route::post('businesses', 'BusinessesController@store');
-Route::get('businesses/{business}', 'BusinessesController@show');
-Route::get('businesses/{business}/edit', 'BusinessesController@edit');
-Route::patch('businesses/{business}', 'BusinessesController@update');
+Route::get('/directory', 'BusinessesController@index');
+Route::get('/directory/register', 'BusinessesController@create');
+Route::post('/directory', 'BusinessesController@store');
+Route::get('/directory/{business}', 'BusinessesController@show');
+Route::get('/directory/{business}/edit', 'BusinessesController@edit');
+Route::patch('/directory/{business}', 'BusinessesController@update');
 
 Route::post('lessons', 'LessonsController@store');
 Route::get('lessons/{lesson}/edit', 'LessonsController@edit');
@@ -31,6 +31,9 @@ Auth::routes(); // user registration, login, and password reset
 
 Route::get('/home', 'HomeController@index');
 Route::post('/contact-request', 'ContactsController@requestInformation');
+Route::get('/thank-you', function() {
+    return view('pages.thankyou');
+});
 
 
 Route::group(['middleware' => 'admin'], function() {

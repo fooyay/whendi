@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <form method="POST" action="/businesses/{{ $business->slug }}">
+    <form method="POST" action="/directory/{{ $business->slug }}">
         {{ method_field('PATCH') }}
 
         <label for="name">Name: </label>

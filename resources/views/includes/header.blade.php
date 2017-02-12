@@ -7,15 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">When Can You Do It?</a>
+            <a class="navbar-brand" href="/">When Can You Do It?</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#examples">EXAMPLES</a></li>
-                <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="/directory">DIRECTORY</a></li>
                 @if (Auth::check())
                     <li><a href="/logout">LOGOUT</a></li>
                 @else

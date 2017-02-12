@@ -15,7 +15,8 @@
                 <li><a href="#examples">EXAMPLES</a></li>
                 <li><a href="#pricing">PRICING</a></li>
                 <li><a href="#contact">CONTACT</a></li>
-                @if (Auth::check())
+                <li><a href="/directory">DIRECTORY</a></li>
+            @if (Auth::check())
                     <li><a href="/logout">LOGOUT</a></li>
                 @else
                     <li><a href="/login">LOGIN</a></li>

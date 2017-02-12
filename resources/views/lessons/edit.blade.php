@@ -41,5 +41,5 @@
     </form>
     </p>
 
-    <h2><a href="/businesses/{{ $lesson->business->slug }}">Back to {{ $lesson->business->name }}</a></h2>
+    <h2><a href="/directory/{{ $lesson->business->slug }}">Back to {{ $lesson->business->name }}</a></h2>
 @stop

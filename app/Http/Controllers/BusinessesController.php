@@ -54,7 +54,7 @@ class BusinessesController extends Controller
         $business->save();
 
         flash('Business registered.');
-        return redirect("/businesses/" . $request->slug);
+        return redirect("/directory/" . $request->slug);
     }
 
     /**
@@ -101,6 +101,6 @@ class BusinessesController extends Controller
         $business->update();
 
         flash('Business profile updated.');
-        return redirect("/businesses/" . $request->slug);
+        return redirect("/directory/" . $request->slug);
     }
 }

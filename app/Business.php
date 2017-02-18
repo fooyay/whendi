@@ -40,4 +40,13 @@ class Business extends Model
     {
         return 'slug';
     }
+
+    public function isEmployee($user = null)
+    {
+        if(!isset($user))
+        {
+            $user = auth()->user();
+        }
+        return $this->employees->contains($user);
+    }
 }

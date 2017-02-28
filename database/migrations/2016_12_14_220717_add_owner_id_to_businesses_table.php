@@ -14,7 +14,7 @@ class AddOwnerIdToBusinessesTable extends Migration
     public function up()
     {
         Schema::table('businesses', function (Blueprint $table) {
-            $table->integer('owner_id')->unsighed()->after('slug')->index;
+            $table->integer('owner_id')->unsighed()->nullable()->after('slug')->index;
         });
     }
 

@@ -14,7 +14,7 @@ class AddSlugToBusinesses extends Migration
     public function up()
     {
         Schema::table('businesses', function($table) {
-            $table->string('slug')->after('name');
+            $table->string('slug')->nullable()->after('name');
         });
     }
 

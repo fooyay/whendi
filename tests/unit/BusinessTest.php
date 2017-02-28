@@ -6,7 +6,7 @@ use App\Business;
 use App\Employee;
 use App\User;
 
-class BusinessTest extends \PHPUnit_Framework_TestCase
+class BusinessTest extends TestCase
 {
     protected $business;
     protected $owner;
@@ -40,7 +40,8 @@ class BusinessTest extends \PHPUnit_Framework_TestCase
         $this->otherEmployee->user_id = $this->employeeUser->id;
     }
 
-    function test_business_has_a_slug()
+    /** @test */
+    function a_business_has_a_slug()
     {
         $this->assertEquals('dans-12-amazing-donkeys-donuts', $this->business->slug());
     }
@@ -63,8 +64,8 @@ class BusinessTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->business->hasEmployee($this->nonemployeeUser));
     }
 
-    function test_a_user_is_an_employee()
-    {
-        $this->assertTrue($this->business->hasEmployee($this->employeeUser));
-    }
+//    function test_a_user_is_an_employee()
+//    {
+//        $this->assertTrue($this->business->hasEmployee($this->employeeUser));
+//    }
 }

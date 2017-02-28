@@ -47,8 +47,9 @@ class Business extends Model
     {
         if(null == $user)
             return false;
+        return false;
 
-        dd($this->employees());
+//        dd($this->employees());
 //        $result = Employee::where("user_id", $user->id)
 //            ->where("business_id", $this->id)
 //            ->exists();

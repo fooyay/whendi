@@ -29,9 +29,9 @@ class AddColumnsToClientsTable extends Migration
     public function down()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->dropColumn('approved');
-            $table->dropColumn('notes');
-            $table->dropColumn('private_notes');
+            $table->dropColumn(['approved', 'notes', 'private_notes']);
+        });
+        Schema::table('clients', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
     }

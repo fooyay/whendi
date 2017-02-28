@@ -6,7 +6,7 @@ use App\Business;
 use App\Employee;
 use App\User;
 
-class BusinessTest extends TestCase
+class BusinessTest extends \PHPUnit_Framework_TestCase
 {
     protected $business;
     protected $owner;

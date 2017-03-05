@@ -10,6 +10,7 @@
 | database. Just tell the factory how a default model should look.
 |
 */
+use Carbon\Carbon;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
@@ -21,5 +22,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
         'is_admin' => false,
+    ];
+});
+
+$factory->define(App\Business::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->company,
+        'zip_code' => $faker->postcode,
+        'active' => true,
+        'created_at' => Carbon::now(),
+        'updated_at' => Carbon::now(),
     ];
 });

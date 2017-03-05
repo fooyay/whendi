@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Employee;
-use App\User;
+
 
 class Business extends Model
 {
@@ -43,17 +42,22 @@ class Business extends Model
         return 'slug';
     }
 
-    public function hasEmployee($user = null)
+    public function hasEmployee(User $user = null)
     {
-        if(null == $user)
+        if (null == $user)
             return false;
-        return false;
 
-//        dd($this->employees());
-//        $result = Employee::where("user_id", $user->id)
-//            ->where("business_id", $this->id)
-//            ->exists();
+        $result = Employee::where("user_id", $user->id)
+            ->where("business_id", $this->id)
+            ->exists();
 
-//        return $result;
+        return $result;
+    }
+
+    public function addEmployee(User $user)
+    {
+        $employee = new Employee();
+        $employee->user_id = $user->id;
+        $this->employees()->save($employee);
     }
 }

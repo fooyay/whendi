@@ -60,4 +60,9 @@ class Business extends Model
         $employee->user_id = $user->id;
         $this->employees()->save($employee);
     }
+
+    public function listEmployees()
+    {
+        return $this->employees()->get();
+    }
 }

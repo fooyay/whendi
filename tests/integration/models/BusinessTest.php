@@ -58,12 +58,7 @@ class BusinessTest extends TestCase
     function a_user_is_not_an_employee()
     {
         $nonemployeeUser = factory(User::class)->create();
-        $business = factory(Business::class)->create();
-        $users = factory(User::class, 3)->create();
-        foreach($users as $user)
-        {
-            $business->addEmployee($user);
-        }
+        [$business, $users] = $this->createBusinessWithEmployees();
 
         $this->assertFalse($business->hasEmployee($nonemployeeUser));
     }
@@ -71,13 +66,34 @@ class BusinessTest extends TestCase
     /** @test */
     function a_user_is_an_employee()
     {
+        [$business, $users] = $this->createBusinessWithEmployees();
+
+        $this->assertTrue($business->hasEmployee($users[0]));
+    }
+
+    /** @test */
+    function it_can_list_employees()
+    {
+        [$business, $users] = $this->createBusinessWithEmployees();
+
+        $listOfEmployees = $business->listEmployees();
+        $this->assertEquals($users->count(), $listOfEmployees->count());
+
+        $employee = Employee::where('user_id', $users[0]->id)
+            ->where('business_id', $business->id)
+            ->first();
+
+        $this->assertTrue($listOfEmployees->contains($employee));
+    }
+
+    protected function createBusinessWithEmployees()
+    {
         $business = factory(Business::class)->create();
         $users = factory(User::class, 3)->create();
         foreach($users as $user)
         {
             $business->addEmployee($user);
         }
-
-        $this->assertTrue($business->hasEmployee($users[0]));
+        return [$business, $users];
     }
 }

@@ -27,7 +27,23 @@ class BusinessTest extends TestCase
     }
 
     /** @test */
-    function it_can_add_an_employee()
+    function it_can_tell_if_a_user_is_an_owner()
+    {
+       $user = factory(User::class, 2)->create();
+       $business = factory(Business::class)->create(['owner_id' => $user[0]->id]);
+
+       $this->assertFalse($business->isOwner($user[1]));
+       $this->assertTrue($business->isOwner($user[0]));
+
+       $this->actingAs($user[1]);
+       $this->assertFalse($business->isOwner());
+
+       $this->actingAs($user[0]);
+       $this->assertTrue($business->isOwner());
+    }
+
+    /** @test */
+    function it_cannot_add_an_employee_if_user_is_not_the_owner()
     {
         $business = factory(Business::class)->create();
         $user = factory(User::class)->create();
@@ -38,6 +54,12 @@ class BusinessTest extends TestCase
             ->where('user_id', $user->id)
             ->exists();
         $this->assertTrue($foundEmployee);
+    }
+
+    /** @test */
+    function it_can_add_an_employee_if_the_user_is_the_owner()
+    {
+
     }
 
     /** @test */
@@ -76,14 +98,22 @@ class BusinessTest extends TestCase
     {
         [$business, $users] = $this->createBusinessWithEmployees();
 
+        DB::enableQueryLog();
         $listOfEmployees = $business->listEmployees();
         $this->assertEquals($users->count(), $listOfEmployees->count());
 
-        $employee = Employee::where('user_id', $users[0]->id)
+        $employee1 = Employee::where('user_id', $users[0]->id)
             ->where('business_id', $business->id)
             ->first();
 
-        $this->assertTrue($listOfEmployees->contains($employee));
+        $this->assertTrue($listOfEmployees->contains($employee1));
+
+        $listOfUsers = $listOfEmployees->map(function($employee, $key) {
+            return $employee->user;
+        });
+
+        $this->assertTrue($listOfUsers->contains($users[0]));
+        dd(DB::getQueryLog());
     }
 
     protected function createBusinessWithEmployees()

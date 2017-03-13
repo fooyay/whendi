@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Auth;
 
 
 class Business extends Model
@@ -63,6 +64,12 @@ class Business extends Model
 
     public function listEmployees()
     {
-        return $this->employees()->get();
+        return $this->employees()->with('user')->get();
+    }
+
+    public function isOwner($user = null)
+    {
+        $user_id = (null == $user) ? Auth::id() : $user->id;
+        return $this->owner_id == $user_id;
     }
 }
